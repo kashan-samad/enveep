@@ -8,11 +8,11 @@
                 </h3>
                 <div class="entry-excerpt">
                     <p>
-                        <?php echo formulate_substr_words($value->content, 160); ?>
+                        <?php echo formulate_substr_words($value->title, 160); ?>
                     </p>
                 </div>
                 <div class="entry-meta align-items-center">
-                    <?php echo format_author_link($value->authorDetails->name, $value->authorDetails->_id); ?> in <?php echo format_category_link($value->categoryDetails->title); ?>
+                    <?php echo 'An Open Letter to ' . format_recipient_link($value->recipientDetails->name, $value->recipientDetails->_id) . ' by ' . format_author_link($value->authorDetails->name, $value->authorDetails->_id); ?>
                     <br />
                     <span>
                         <?php echo short_date($value->createdAt); ?>
@@ -25,6 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 bgcover" style="background-image:url(images/thumb/thumb-800x495.jpg);"></div>
+        <div class="col-md-3 bgcover" style="background-image:url(<?php echo base_url('images/posts/' . $value->imageUrl); ?>);"></div>
     </article>
     <?php endforeach; ?>

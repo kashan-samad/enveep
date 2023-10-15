@@ -1,14 +1,10 @@
     <?php foreach ($data as &$value) : ?>
-    <article class="first mb-3">
-        <figure>
-            <?php echo format_post_image($value->title, $value->_id, $value->imageUrl); ?>
-        </figure>
-        <h3 class="entry-title mb-3">
-            <?php echo format_post_link($value->title, $value->_id); ?>
-        </h3>
+    <article class="post-list-style-2 mb-5 col-md-4">
+        <a href="single.html"><figure class="bgcover" style="background-image:url(<?php echo base_url('images/posts/thumbnails/' . $value->_id . '/thumb-512x512.jpg'); ?>);"></figure></a>
+        <h3 class="entry-title mb-3"><?php echo format_post_link($value->title, $value->_id); ?></h3>
         <div class="entry-excerpt">
             <p>
-                <?php echo formulate_substr_words($value->content, 160); ?>
+                <?php echo formulate_substr_words($value->title, 160); ?>
             </p>
         </div>
         <div class="entry-meta align-items-center">

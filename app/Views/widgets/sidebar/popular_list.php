@@ -5,7 +5,7 @@
         </div>
         <div class="post-content">
             <h5 class="entry-title mb-3">
-                <?php echo format_post_link($value->title, $value->_id); ?>
+                <?php echo format_post_link($value->title, $value->_id, 'An Open Letter to ' . $value->recipientDetails->name); ?>
             </h5>
             <div class="entry-meta align-items-center">
                 <?php echo format_author_link($value->authorDetails->name, $value->authorDetails->_id); ?> in <?php echo format_category_link($value->categoryDetails->title); ?>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AuthorsModel;
 use App\Models\CategoriesModel;
-use App\Models\LettersModel;
+use App\Models\PostsModel;
 
 helper(['_format_date']);
 
@@ -14,17 +14,17 @@ class Error extends BaseController
     {
         $authorModel = model(AuthorsModel::class);
         $categoryModel = model(CategoriesModel::class);
-        $letterModel = model(LettersModel::class);
+        $postModel = model(PostsModel::class);
 
         $data = [
             'categories_list' => $categoryModel->getCategories(),
-            'trending_letters' => $letterModel->getLetters(3),
+            'trending_letters' => $postModel->getPosts(3),
             'popular_categories' => $categoryModel->getCategories(),
         ];
 
         foreach ($data['trending_letters'] as $letter) {
-            $letter->authorDetails = $authorModel->getAuthor($letter->author);
-            $letter->categoryDetails = $categoryModel->getCategory($letter->category);
+            $letter->authorDetails = $authorModel->getAuthor($letter->authorId);
+            $letter->categoryDetails = $categoryModel->getCategory($letter->categoryId);
         }
 
         // $data['widget_home_page_banner_section'] = view('widgets/home_page/banner_section');

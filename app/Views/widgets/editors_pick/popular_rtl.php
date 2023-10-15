@@ -4,7 +4,7 @@
     </h2>
     <div class="entry-excerpt">
         <p>
-            <?php echo formulate_substr_words($value->title, 240); ?>
+        <?php echo formulate_substr_words($value->title, 240); ?>
         </p>
     </div>
     <div class="entry-meta align-items-center">

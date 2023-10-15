@@ -49,7 +49,7 @@
                 <div class="container mobile-menu-fixed pr-5">
                     <h1 class="logo-small navbar-brand"><a href="<?php echo base_url(); ?>" class="header-logo"><?php echo SITE_NAME; ?></a></h1>
 
-                    <a class="author-avatar" href="#"><img src="<?php echo base_url('images/author-avata-1.jpg'); ?>" alt=""></a>
+                    <a class="author-avatar" href="#"><img src="<?php echo base_url('images/authors/author-avata-1.jpg'); ?>" alt=""></a>
 
                     <ul class="social-network heading navbar-nav d-lg-flex align-items-center">
                         <li><a href="#"><i class="icon-facebook"></i></a></li>
@@ -103,7 +103,7 @@
                                     <li><a class="btn btn-header" href="<?php echo base_url('write-letter'); ?>">Write a Letter</a></li>
                                 </ul>
                                 <li class="menu-item-has-children1">
-                                    <a class="author-avatar" href="#"><img src="<?php echo base_url('images/author-avata-1.jpg'); ?>" alt=""></a>
+                                    <a class="author-avatar" href="#"><img src="<?php echo base_url('images/authors/author-avata-1.jpg'); ?>" alt=""></a>
                                     <ul class="sub-menu">
                                         <li><a href="<?php echo base_url('profile'); ?>">Profile</a></li>
                                         <li><a href="<?php echo base_url('account'); ?>">Account</a></li>

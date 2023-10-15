@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AuthorsModel;
 use App\Models\CategoriesModel;
-use App\Models\LettersModel;
+use App\Models\PostsModel;
 
 helper(['_format_date']);
 
@@ -14,7 +14,7 @@ class WriteLetter extends BaseController
     {
         $authorModel = model(AuthorsModel::class);
         $categoryModel = model(CategoriesModel::class);
-        $letterModel = model(LettersModel::class);
+        $postModel = model(PostsModel::class);
 
         $data = [
 

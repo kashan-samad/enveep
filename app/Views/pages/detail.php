@@ -6,7 +6,7 @@
                 </h1>
                 <div class="entry-meta align-items-center">
                     <a class="author-avatar" href="<?php echo format_url('author', $content->authorDetails->name, $content->authorDetails->_id); ?>">
-                        <img src="<?php echo base_url('images/author-avata-2.jpg'); ?>" alt="<?php echo $content->authorDetails->name; ?>">
+                        <img src="<?php echo base_url('images/authors/' . $content->authorDetails->imageUrl); ?>" alt="<?php echo $content->authorDetails->name; ?>">
                     </a>
                     <?php echo format_author_link($content->authorDetails->name, $content->authorDetails->_id); ?> in <?php echo format_category_link($content->categoryDetails->title); ?>
                     <br />
@@ -22,7 +22,7 @@
             </div>
         </div> <!--end single header-->
         <figure class="image zoom mb-5">
-            <img src="<?php echo base_url('images/' . $value->imageUrl); ?>" alt="<?php echo $content->title; ?>" />
+            <img src="<?php echo base_url('images/posts/' . $content->imageUrl); ?>" alt="<?php echo $content->title; ?>" />
         </figure>  <!--figure-->
         <article class="entry-wraper mb-5">
             <div class="entry-left-col">
@@ -87,7 +87,7 @@
             <div class="box box-author m_b_2rem">
                 <div class="post-author row-flex">
                     <div class="author-img">
-                        <img alt="<?php echo $content->authorDetails->name; ?>" src="<?php echo base_url('images/author-avata-1.jpg'); ?>" class="avatar">
+                        <img alt="<?php echo $content->authorDetails->name; ?>" src="<?php echo base_url('images/authors/' . $content->authorDetails->imageUrl); ?>" class="avatar">
                     </div>
                     <div class="author-content">
                     <div class="top-author">

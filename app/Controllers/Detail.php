@@ -4,7 +4,8 @@ namespace App\Controllers;
 
 use App\Models\AuthorsModel;
 use App\Models\CategoriesModel;
-use App\Models\LettersModel;
+use App\Models\PostsModel;
+use App\Models\RecipientsModel;
 
 helper(['_format_date']);
 
@@ -14,20 +15,23 @@ class Detail extends BaseController
     {
         $authorModel = model(AuthorsModel::class);
         $categoryModel = model(CategoriesModel::class);
-        $letterModel = model(LettersModel::class);
+        $postModel = model(PostsModel::class);
+        $recipientModel = model(RecipientsModel::class);
 
         $data = [
-            'content' => $letterModel->getLetter('6272d74ed00fd2c54a0ffde7'),
-            'related_posts' => $letterModel->getLetters(3),
+            'content' => $postModel->getPost('652485686a762b9939b8877b'),
+            'related_posts' => $postModel->getPosts(3),
         ];
 
         foreach ($data['related_posts'] as $letter) {
-            $letter->authorDetails = $authorModel->getAuthor($letter->author);
-            $letter->categoryDetails = $categoryModel->getCategory($letter->category);
+            $letter->authorDetails = $authorModel->getAuthor($letter->authorId);
+            $letter->categoryDetails = $categoryModel->getCategory($letter->categoryId);
+            $letter->recipientDetails = $recipientModel->getRecipient($letter->recipientId);
         }
 
-        $data['content']->authorDetails = $authorModel->getAuthor($data['content']->author);
-        $data['content']->categoryDetails = $categoryModel->getCategory($data['content']->category);
+        $data['content']->authorDetails = $authorModel->getAuthor($data['content']->authorId);
+        $data['content']->categoryDetails = $categoryModel->getCategory($data['content']->categoryId);
+        $data['content']->recipientDetails = $recipientModel->getRecipient($data['content']->recipientId);
 
         $data['widget_related_posts'] = view('widgets/cards/related_posts', ['data' => $data['related_posts']]);
 

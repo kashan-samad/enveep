@@ -52,7 +52,7 @@
                                     <?php echo $widget_editor_pick_popular; ?>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-4 bgcover d-none d-md-block pl-md-0 ml-0" style="background-image:url(images/thumb/thumb-800x495.jpg);"></div>
+                            <div class="col-lg-6 col-md-4 bgcover d-none d-md-block pl-md-0 ml-0" style="background-image:url(<?php echo base_url('images/posts/' . $editor_pick_popular[0]->imageUrl); ?>);"></div>
                         </div>
                         <div class="divider"></div>
                     </div>
@@ -90,16 +90,7 @@
                                     <?php echo $widget_random_small; ?>
                                 </div>
                                 <?php echo $widget_random_list; ?>
-                                <ul class="page-numbers heading">
-                                    <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                    <li><a class="page-numbers" href="#">2</a></li>
-                                    <li><a class="page-numbers" href="#">3</a></li>
-                                    <li><a class="page-numbers" href="#">4</a></li>
-                                    <li><a class="page-numbers" href="#">5</a></li>
-                                    <li><a class="page-numbers" href="#">...</a></li>
-                                    <li><a class="page-numbers" href="#">98</a></li>
-                                    <li><a class="next page-numbers" href="#"><i class="icon-right-open-big"></i></a></li>
-                                </ul>
+                                <?php echo $widget_pagination; ?>
 
                             </div> <!--col-md-8-->
                             <div class="col-md-4 pl-md-5 sticky-sidebar">

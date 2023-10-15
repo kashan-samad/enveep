@@ -40,8 +40,8 @@ function format_read_time($time = null) {
     return $time ? $time . ' read' : '';
 }
 
-function format_post_link($title, $id = null) {
-    return '<a class="letter-link" href="' . format_url('post', $title, $id) . '">' . $title . '</a>';
+function format_post_link($title, $id = null, $text = null) {
+    return '<a class="letter-link" href="' . format_url('post', $title, $id) . '">' . ($text ? $text : $title) . '</a>';
 }
 
 function format_author_link($name, $id = null) {
@@ -52,8 +52,16 @@ function format_category_link($title) {
     return '<a class="category-link" href="' . format_url('category', $title) . '">' . $title . '</a>';
 }
 
-function format_post_image($title, $id = null, $imageUrl = null) {
-    return '<a href="' . format_url('post', $title, $id) . '"><img src="' . base_url('images/' . $imageUrl) . '" alt="' . $title . '"></a>';
+function format_recipient_link($name, $id = null) {
+    return '<a class="recipient-link" href="' . format_url('recipient', $name, $id) . '">' . $name . '</a>';
+}
+
+function format_post_image($title, $id = null, $imageUrl = null, $dimensions = null) {
+    $thumb = 'images/posts/thumbnails/'. $id . '/thumb-' . $dimensions . '.jpg';
+    if (file_exists($thumb)) {
+        return '<a href="' . format_url('post', $title, $id) . '"><img src="' . base_url($thumb) . '" alt="' . $title . '"></a>';
+    }
+    return '<a href="' . format_url('post', $title, $id) . '"><img src="' . base_url('images/posts/' . $imageUrl) . '" alt="' . $title . '"></a>';
 }
 
 function format_read_icon() {
