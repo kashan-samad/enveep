@@ -1,0 +1,35 @@
+https://demos.alithemes.com/html/merinda/index.html
+- index
+  Editor's Picks (primary) - 1
+  Editor's Picks (secondary) - 3
+  Trending - 4
+  Editors' Pick (popular) - 1
+  Random Medium - 4 (plus Sponsor)
+  Most Recent - 5
+      Popular - 4 (DONE)
+  Random Small - 4
+    Random List - 3 (DONE)
+  Pagination
+  Sponsor
+- categories
+  <Category> Heading
+  Single Post Section
+    Popular in <Category> (DONE)
+  Random List - 5
+  Random Small - 4
+    Random List - 3 (DONE)
+  Pagination
+  Sponsor
+- typography
+- search
+  Search Results List - 5
+- author
+  Author
+  Highlight Posts - 4
+  Latest Posts List - 5
+  Random Small - 4
+  Random List - 3
+  Pagination
+  Sponsor
+- 404
+- archive
